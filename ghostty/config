@@ -1,3 +1,5 @@
+term = xterm-256color
+
 # keybind = cmd+a=text:\x01
 # keybind = cmd+b=text:\x02
 # keybind = cmd+c=text:\x03
@@ -25,3 +27,4 @@ keybind = cmd+r=text:\x12
 
 background-opacity = 0.9
 background = #000000
+
