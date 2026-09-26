@@ -45,6 +45,8 @@ You still close windows with `⌘W` / `⌘Q` as usual.
 
 > **Can't type h/j/k/l?** You're probably stuck in resize mode, which captures those keys without Option. Press `Esc`. Check the current mode with `aerospace list-modes --current`; it should print `main`.
 
+> **Every ⌥ shortcut dead except `⌥ Enter`?** An app is holding macOS Secure Input (usually Chrome after a password field), which blocks shortcuts that could type a character. Click away from the password field, or quit the app. To find which app it is: `ioreg -l -w 0 | grep -o 'SecureInputPID"=[0-9]*' | head -1`, then `ps -p <pid>`.
+
 ## Multiple monitors
 
 Each monitor shows one workspace, so you move things between screens with the workspace keys.
