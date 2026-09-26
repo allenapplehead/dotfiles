@@ -34,10 +34,10 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
     alt-shift-k = 'move up'
     alt-shift-l = 'move right'
 
-    # Consider using 'join-with' command as a 'split' replacement if you want to enable
-    # normalizations
-    alt-s = 'split horizontal' # moved from alt-h (now focus left)
-    alt-v = 'split vertical'
+    # Tile windows side by side (S) or top to bottom (V). Unlike i3's 'split', these
+    # also switch out of stacked/tabbed layout, so they always take effect.
+    alt-s = 'layout h_tiles'
+    alt-v = 'layout v_tiles'
 
     alt-f = 'fullscreen'
 
