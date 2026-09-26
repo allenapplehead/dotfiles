@@ -23,6 +23,12 @@ install_ghostty() {
   echo "  ✓ ~/.config/ghostty/config"
 }
 
+install_aerospace() {
+  echo "Installing aerospace..."
+  cp "$DOTFILES_DIR/aerospace/.aerospace.toml" ~/
+  echo "  ✓ ~/.aerospace.toml"
+}
+
 usage() {
   echo "Usage: $0 [dotfile...]"
   echo ""
@@ -30,6 +36,7 @@ usage() {
   echo "  tmux      - tmux configuration (~/.tmux.conf)"
   echo "  zsh       - zsh configuration (~/.zshrc)"
   echo "  ghostty   - ghostty configuration (~/.config/ghostty/config)"
+  echo "  aerospace - aerospace configuration (~/.aerospace.toml)"
   echo ""
   echo "If no arguments are given, all dotfiles are installed."
 }
@@ -43,6 +50,7 @@ if [[ $# -eq 0 ]]; then
   install_tmux
   install_zsh
   install_ghostty
+  install_aerospace
   echo "Done! All dotfiles installed."
   exit 0
 fi
@@ -52,6 +60,7 @@ for arg in "$@"; do
     tmux)    install_tmux ;;
     zsh)     install_zsh ;;
     ghostty) install_ghostty ;;
+    aerospace) install_aerospace ;;
     *)
       echo "Unknown dotfile: '$arg'"
       echo "Run '$0 --help' to see available options."

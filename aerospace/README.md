@@ -1,0 +1,89 @@
+# AeroSpace
+
+Config for [AeroSpace](https://nikitabobko.github.io/AeroSpace/), a tiling window manager for macOS. It's based on the official [i3-like config](https://nikitabobko.github.io/AeroSpace/goodies#i3-like-config), remapped to vim motion keys (`hjkl`).
+
+## Install
+
+```sh
+./install.sh aerospace   # copies .aerospace.toml to ~/.aerospace.toml
+```
+
+Then reload with <kbd>⌥</kbd><kbd>⇧</kbd><kbd>C</kbd>. AeroSpace needs **Accessibility** permission (System Settings → Privacy & Security → Accessibility).
+
+`⌥` is the Option key.
+
+## Main mode
+
+| Keys | Action |
+|---|---|
+| `⌥ Enter` | Open a new iTerm window |
+| `⌥ H / J / K / L` | Focus left / down / up / right (wraps around within the workspace) |
+| `⌥⇧ H / J / K / L` | Move window left / down / up / right |
+| `⌥ S` | Split horizontally (the next window goes beside this one) |
+| `⌥ V` | Split vertically (the next window goes below this one) |
+| `⌥ E` | Toggle split orientation |
+| `⌥ T` | Stacked layout (vertical accordion) |
+| `⌥ W` | Tabbed layout (horizontal accordion) |
+| `⌥ F` | Fullscreen the focused window |
+| `⌥⇧ Space` | Toggle floating / tiling |
+| `⌥ 1–0` | Switch to workspace 1–10 |
+| `⌥⇧ 1–0` | Send window to workspace 1–10 |
+| `⌥⇧ C` | Reload config |
+| `⌥ R` | Enter resize mode |
+
+You still close windows with `⌘W` / `⌘Q` as usual.
+
+## Resize mode (`⌥ R`)
+
+| Keys | Action |
+|---|---|
+| `H` | Narrower |
+| `L` | Wider |
+| `J` | Taller |
+| `K` | Shorter |
+| `Enter` / `Esc` | Back to main mode |
+
+> **Can't type h/j/k/l?** You're probably stuck in resize mode, which captures those keys without Option. Press `Esc`. Check the current mode with `aerospace list-modes --current`; it should print `main`.
+
+## Multiple monitors
+
+Each monitor shows one workspace, so you move things between screens with the workspace keys.
+
+- **Move between monitors:** `⌥ 1–0` jumps to a workspace. If it's showing on the other monitor, focus moves to that monitor.
+- **Move a window to the other monitor:** `⌥⇧` plus the number of a workspace that's on the other monitor.
+- **Choose what a monitor shows:** focus that monitor, then press `⌥` plus a number.
+- `⌥ H/J/K/L` stay within the current workspace. At the edge, focus wraps around instead of crossing to the next monitor.
+
+### Optional monitor commands (not bound yet)
+
+Add these under `[mode.main.binding]` if you want them. `⌥ Tab` may conflict with window-switcher apps.
+
+```toml
+alt-tab       = 'focus-monitor --wrap-around next'              # jump focus to the other monitor
+alt-shift-tab = 'move-node-to-monitor --wrap-around next'       # send window to the other monitor
+alt-ctrl-tab  = 'move-workspace-to-monitor --wrap-around next'  # move the whole workspace
+```
+
+### Optional: pin workspaces to a monitor
+
+```toml
+[workspace-to-monitor-force-assignment]
+1 = 'main'        # 'main' is the monitor with the menu bar
+2 = 'main'
+3 = 'main'
+4 = 'main'
+5 = 'main'
+6 = 'secondary'
+7 = 'secondary'
+8 = 'secondary'
+9 = 'secondary'
+10 = 'secondary'
+```
+
+Run `aerospace list-monitors` to see what AeroSpace calls each screen.
+
+## Other tips
+
+- AeroSpace doesn't use macOS Spaces. It hides windows by parking them in a screen corner, so a sliver of a window at the edge of the screen is normal.
+- The first time you press `⌥ Enter`, allow AeroSpace to control iTerm (System Settings → Privacy & Security → Automation).
+- `aerospace list-windows --all` lists every window AeroSpace manages. `aerospace reload-config` reloads the config from a terminal.
