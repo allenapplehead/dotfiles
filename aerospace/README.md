@@ -66,23 +66,17 @@ alt-shift-tab = 'move-node-to-monitor --wrap-around next'       # send window to
 alt-ctrl-tab  = 'move-workspace-to-monitor --wrap-around next'  # move the whole workspace
 ```
 
-### Optional: pin workspaces to a monitor
+### Workspaces are pinned to monitors
 
-```toml
-[workspace-to-monitor-force-assignment]
-1 = 'main'        # 'main' is the monitor with the menu bar
-2 = 'main'
-3 = 'main'
-4 = 'main'
-5 = 'main'
-6 = 'secondary'
-7 = 'secondary'
-8 = 'secondary'
-9 = 'secondary'
-10 = 'secondary'
-```
+Workspaces stay on the same screen after the Mac sleeps or a display is unplugged. Monitors are counted left to right:
 
-Run `aerospace list-monitors` to see what AeroSpace calls each screen.
+| Workspaces | 3 monitors | 2 monitors | 1 monitor |
+|---|---|---|---|
+| 1–3 | Left | Left | Only screen |
+| 4–6 | Middle | Right | Only screen |
+| 7–10 | Right | Right | Only screen |
+
+The mapping is the `[workspace-to-monitor-force-assignment]` section at the bottom of `.aerospace.toml`. Run `aerospace list-monitors` to see how AeroSpace numbers your screens.
 
 ## Other tips
 
