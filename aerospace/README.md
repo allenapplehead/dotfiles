@@ -19,8 +19,8 @@ Then reload with <kbd>⌥</kbd><kbd>⇧</kbd><kbd>C</kbd>. AeroSpace needs **Acc
 | `⌥ Enter` | Open a new iTerm window |
 | `⌥ H / J / K / L` | Focus left / down / up / right (wraps around within the workspace) |
 | `⌥⇧ H / J / K / L` | Move window left / down / up / right |
-| `⌥ S` | Tile side by side (also exits stacked/tabbed layout) |
-| `⌥ V` | Tile top to bottom (also exits stacked/tabbed layout) |
+| `⌥ V` | Tile side by side, like vim's `:vsplit` (also exits stacked/tabbed layout) |
+| `⌥ S` | Tile top to bottom, like vim's `:split` (also exits stacked/tabbed layout) |
 | `⌥ E` | Toggle split orientation |
 | `⌥ T` | Stacked layout (vertical accordion) |
 | `⌥ W` | Tabbed layout (horizontal accordion) |
