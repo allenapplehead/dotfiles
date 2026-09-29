@@ -70,11 +70,12 @@ alt-ctrl-tab  = 'move-workspace-to-monitor --wrap-around next'  # move the whole
 
 Workspaces stay on the same screen after the Mac sleeps or a display is unplugged. Monitors are counted left to right:
 
-| Workspaces | 3 monitors | 2 monitors | 1 monitor |
-|---|---|---|---|
-| 1–3 | Left | Left | Only screen |
-| 4–6 | Middle | Right | Only screen |
-| 7–10 | Right | Right | Only screen |
+| Workspaces | 4 monitors | 3 monitors | 2 monitors | 1 monitor |
+|---|---|---|---|---|
+| 1–3 | 1st | Left | Left | Only screen |
+| 4–6 | 2nd | Middle | Right | Only screen |
+| 7–9 | 3rd | Right | Right | Only screen |
+| 10 | 4th | Right | Right | Only screen |
 
 The mapping is the `[workspace-to-monitor-force-assignment]` section at the bottom of `.aerospace.toml`. Run `aerospace list-monitors` to see how AeroSpace numbers your screens.
 
