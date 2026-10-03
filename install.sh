@@ -27,10 +27,6 @@ install_aerospace() {
   echo "Installing aerospace..."
   cp "$DOTFILES_DIR/aerospace/.aerospace.toml" ~/
   echo "  ✓ ~/.aerospace.toml"
-  mkdir -p ~/.local/bin
-  cp "$DOTFILES_DIR/aerospace/release-secure-input" ~/.local/bin/
-  chmod +x ~/.local/bin/release-secure-input
-  echo "  ✓ ~/.local/bin/release-secure-input"
 }
 
 usage() {

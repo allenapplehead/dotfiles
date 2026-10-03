@@ -17,7 +17,6 @@ Then reload with <kbd>⌥</kbd><kbd>⇧</kbd><kbd>C</kbd>. AeroSpace needs **Acc
 | Keys | Action |
 |---|---|
 | `⌥ Enter` | Open a new iTerm window |
-| `⌥⇧ Enter` | Quit the app holding Secure Input (asks first; works even when other shortcuts are blocked) |
 | `⌥ H / J / K / L` | Focus left / down / up / right (wraps around within the workspace) |
 | `⌥⇧ H / J / K / L` | Move window left / down / up / right |
 | `⌥ V` | Tile side by side, like vim's `:vsplit` (also exits stacked/tabbed layout) |
@@ -47,7 +46,7 @@ You still close windows with `⌘W` / `⌘Q` as usual.
 
 > **Can't type h/j/k/l?** You're probably stuck in resize mode, which captures those keys without Option. Press `Esc`. Check the current mode with `aerospace list-modes --current`; it should print `main`.
 
-> **Every ⌥ shortcut dead except `⌥ Enter`?** An app is holding macOS Secure Input (usually Chrome after a password field), which blocks shortcuts that could type a character. Press `⌥⇧ Enter` to find that app and quit it, or click away from the password field. To check by hand: `ioreg -l -w 0 | grep -o 'SecureInputPID"=[0-9]*' | head -1`, then `ps -p <pid>`.
+> **Every ⌥ shortcut dead except `⌥ Enter`?** An app is holding macOS Secure Input (usually Chrome after a password field), which blocks shortcuts that could type a character. Click away from the password field, or quit the app. To find which app it is: `ioreg -l -w 0 | grep -o 'SecureInputPID"=[0-9]*' | head -1`, then `ps -p <pid>`.
 
 ## Multiple monitors
 
