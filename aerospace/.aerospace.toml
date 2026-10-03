@@ -22,6 +22,10 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
     -e 'tell application "iTerm" to create window with default profile' \
     -e 'tell application "iTerm" to activate' '''
 
+    # Works even while Secure Input blocks alt+letter shortcuts (no character is typed).
+    # Finds the app holding Secure Input and asks before quitting it.
+    alt-shift-enter = 'exec-and-forget ~/.local/bin/release-secure-input'
+
     # Vim motions: h = left, j = down, k = up, l = right
     # i3 wraps focus by default
     alt-h = 'focus --boundaries-action wrap-around-the-workspace left'
