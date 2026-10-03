@@ -25,6 +25,7 @@ Then reload with <kbd>⌥</kbd><kbd>⇧</kbd><kbd>C</kbd>. AeroSpace needs **Acc
 | `⌥ T` | Stacked layout (vertical accordion) |
 | `⌥ W` | Tabbed layout (horizontal accordion) |
 | `⌥ F` | Fullscreen the focused window |
+| `⌥⇧ F` | Flatten the workspace (clears hidden nested containers when tiling acts strangely) |
 | `⌥⇧ Space` | Toggle floating / tiling |
 | `⌥ 1–0` | Switch to workspace 1–10 |
 | `⌥⇧ 1–0` | Send window to workspace 1–10 |

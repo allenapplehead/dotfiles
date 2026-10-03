@@ -41,6 +41,7 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
     alt-s = 'layout v_tiles'
 
     alt-f = 'fullscreen'
+    alt-shift-f = 'flatten-workspace-tree' # reset nested containers to a simple layout
 
     alt-t = 'layout v_accordion' # 'layout stacking' in i3 (moved from alt-s)
     alt-w = 'layout h_accordion' # 'layout tabbed' in i3
